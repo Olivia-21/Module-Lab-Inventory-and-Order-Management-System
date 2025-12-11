@@ -1,3 +1,4 @@
+-- Business KPI Queries
 -- Total Revenue (Shipped or Delivered)
 SELECT SUM(TotalAmount) AS TotalRevenue
 FROM Orders
@@ -26,6 +27,7 @@ GROUP BY Month
 ORDER BY Month;
 
 
+-- Analytical Queries using Window Functions
 -- Sales Rank by Category
 SELECT
     p.Category,
@@ -47,6 +49,7 @@ JOIN Orders o ON c.CustomerID = o.CustomerID
 ORDER BY c.CustomerID, o.OrderDate;
 
 
+-- Creating a View for Customer Sales Summary
 CREATE VIEW CustomerSalesSummary AS
 SELECT 
     c.CustomerID,
