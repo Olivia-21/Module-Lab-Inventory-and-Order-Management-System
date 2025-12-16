@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourcePerFileMappings">
+    <file url="file://$PROJECT_DIR$/.idea/queries/01_insert_queries.sql" value="05e1e022-ac26-4eae-979a-f6026f5f7e67" />
+    <file url="file://$PROJECT_DIR$/.idea/queries/02_order_procedures.sql" value="05e1e022-ac26-4eae-979a-f6026f5f7e67" />
     <file url="file://$PROJECT_DIR$/.idea/queries/Query.sql" value="05e1e022-ac26-4eae-979a-f6026f5f7e67" />
-    <file url="file://$PROJECT_DIR$/STEP_3_DML.sql" value="05e1e022-ac26-4eae-979a-f6026f5f7e67" />
-    <file url="file://$PROJECT_DIR$/Step_2_DDL.sql" value="05e1e022-ac26-4eae-979a-f6026f5f7e67" />
+    <file url="file://$PROJECT_DIR$/.idea/queries/audit_log_procedures.sql" value="05e1e022-ac26-4eae-979a-f6026f5f7e67" />
+    <file url="file://$PROJECT_DIR$/.idea/queries/stored_procedure_call.sql" value="05e1e022-ac26-4eae-979a-f6026f5f7e67" />
+    <file url="file://$PROJECT_DIR$/03_kpi_queries.sql" value="05e1e022-ac26-4eae-979a-f6026f5f7e67" />
+    <file url="file://$PROJECT_DIR$/DDL/01_schema.sql" value="05e1e022-ac26-4eae-979a-f6026f5f7e67" />
+    <file url="file://$PROJECT_DIR$/DDL/03_triggers.sql" value="05e1e022-ac26-4eae-979a-f6026f5f7e67" />
   </component>
 </project>

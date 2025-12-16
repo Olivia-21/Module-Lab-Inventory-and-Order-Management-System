@@ -55,56 +55,11 @@ SELECT
     c.customer_id,
     c.full_name,
     SUM(o.total_order_amount) AS total_spent
-FROM Customers cexit
-
+FROM Customers c
 JOIN Orders o ON c.customer_id = o.customer_id
 GROUP BY c.customer_id, c.full_name;
 
 
-DELIMITER //
-
-CREATE PROCEDURE ProcessNewOrder(
-    IN p_customer_id INT,
-    IN p_product_id INT,
-    IN p_quantity INT
-)
-BEGIN
-    DECLARE v_Price DECIMAL(10,2);
-    DECLARE v_Stock INT;
-    DECLARE v_OrderID INT;
-
-    START TRANSACTION;
-
-    -- Check inventory
-    SELECT Price, quantity_on_hand INTO v_Price, v_Stock
-    FROM Products p
-    JOIN Inventory i ON p.product_id = i.product_id
-    WHERE p.product_id = p_product_id;
-
-    IF v_Stock < p_Quantity THEN
-        ROLLBACK;
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Insufficient stock';
-    ELSE
-        -- Reduce inventory
-        UPDATE Inventory
-        SET quantity_on_hand = quantity_on_hand - p_quantity
-        WHERE product_id = p_product_id;
-
-        -- Create new order
-        INSERT INTO Orders (customer_id, order_date, total_order_amount, order_status)
-        VALUES (p_customer_id, CURDATE(), v_Price * p_quantity, 'Pending');
-
-        SET v_OrderID = LAST_INSERT_ID();
-
-        -- Insert into order items
-        INSERT INTO OrderItems (order_id, product_id, Quantity, price_at_purchase)
-        VALUES (v_OrderID, p_product_id, p_quantity, v_Price);
-
-        COMMIT;
-    END IF;
-END //
-
-DELIMITER ;
 
 
 
