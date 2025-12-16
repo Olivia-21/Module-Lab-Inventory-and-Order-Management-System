@@ -8,7 +8,8 @@
     <file url="file://$PROJECT_DIR$/.idea/queries/stored_procedure_call.sql" value="05e1e022-ac26-4eae-979a-f6026f5f7e67" />
     <file url="file://$PROJECT_DIR$/DDL/01_schema.sql" value="05e1e022-ac26-4eae-979a-f6026f5f7e67" />
     <file url="file://$PROJECT_DIR$/DDL/02_insert_queries.sql" value="05e1e022-ac26-4eae-979a-f6026f5f7e67" />
-    <file url="file://$PROJECT_DIR$/DDL/03_triggers.sql" value="05e1e022-ac26-4eae-979a-f6026f5f7e67" />
+    <file url="file://$PROJECT_DIR$/DDL/triggers/trigger_on_Inventory_table.sql" value="05e1e022-ac26-4eae-979a-f6026f5f7e67" />
+    <file url="file://$PROJECT_DIR$/DDL/triggers/triggers_on_order_table.sql" value="05e1e022-ac26-4eae-979a-f6026f5f7e67" />
     <file url="file://$PROJECT_DIR$/DML/03_kpi_queries.sql" value="05e1e022-ac26-4eae-979a-f6026f5f7e67" />
     <file url="file://$PROJECT_DIR$/DML/View/customary_summary_view.sql" value="05e1e022-ac26-4eae-979a-f6026f5f7e67" />
   </component>

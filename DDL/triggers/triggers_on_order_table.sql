@@ -28,27 +28,3 @@ AFTER UPDATE ON orders
         CALL log_event('orders',NEW.order_id, 'UPDATE', CONCAT('Order', OLD.order_id, 'updated to ', NEW.order_id));
     END $$;
 DELIMITER ;
-
-
-#Update trigger on Inventory (Items in Stock)
-DELIMITER $$
-CREATE TRIGGER trg_inventory_update
-AFTER UPDATE ON inventory
-    FOR EACH ROW
-    BEGIN
-        CALL log_event('inventory',  NEW.product_id, 'UPDATE', CONCAT('Inventory updated for product ', NEW.product_id));
-    END $$;
-DELIMITER ;
-
-
-#trigger Customer Delete
-DELIMITER $$
-CREATE TRIGGER trg_customer_delete
-AFTER DELETE ON customers
-    FOR EACH ROW
-    BEGIN
-        CALL log_event('customers', OLD.customer_id, 'DELETE', CONCAT('Customer id ', OLD.customer_id, 'deleted.'));
-    END $$;
-
-DELIMITER ;
-
