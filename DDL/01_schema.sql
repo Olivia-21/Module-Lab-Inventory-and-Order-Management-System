@@ -1,7 +1,7 @@
 -- STEP 2: SQL DDL CREATE TABLES
 Create Database IF NOT EXISTS e_commercedb;
 Use e_commercedb;
-# drop Database e_commercedb;
+
 
 -- 1. Customers Table
 CREATE TABLE Customers (
