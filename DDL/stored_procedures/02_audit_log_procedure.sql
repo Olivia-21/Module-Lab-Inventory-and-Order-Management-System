@@ -11,3 +11,5 @@ CREATE PROCEDURE log_event(
             VALUES (event_entity, event_id, event_action, event_message, NOW());
     END $$
 DELIMITER ;
+
+select * from audit_logs;

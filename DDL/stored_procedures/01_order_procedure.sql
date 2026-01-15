@@ -12,7 +12,6 @@ CREATE PROCEDURE ProcessNewOrder(
 -- =========================================================
 BEGIN
 
-START TRANSACTION;
     DECLARE order_total DECIMAL(10,2) DEFAULT 0; -- Total amount for the order
     DECLARE i INT DEFAULT 0;                     -- Loop counter for iterating through products
     DECLARE n INT;                               -- Total number of products in the order
@@ -20,8 +19,13 @@ START TRANSACTION;
     DECLARE qty INT;                             -- Quantity of the current product in the order
     DECLARE price DECIMAL(10,2);                 -- Price of the current product at purchase time
     DECLARE stock INT;                           -- Available stock for the current product
-
-
+    
+    
+	-- =====================
+    -- Start transaction 
+    -- ======================
+     START TRANSACTION;
+     
     -- Get the number of products in the order JSON array
     SET n = JSON_LENGTH(p_product_ids);
 
@@ -31,7 +35,7 @@ START TRANSACTION;
 -- ============================================================
     WHILE i < n DO
         SET pid = CAST(JSON_EXTRACT(p_product_ids, CONCAT('$[', i, ']')) AS UNSIGNED); -- Extract current product ID from JSON array
-        SET qty = CAST(JSON_EXTRACT(p_quantities, CONCAT('$[', i, ']')) AS UNSIGNED);  --Extract quantity of the current product from JSON array
+        SET qty = CAST(JSON_EXTRACT(p_quantities, CONCAT('$[', i, ']')) AS UNSIGNED);  -- Extract quantity of the current product from JSON array
 
          -- Get available stock for the current product from Inventory table
         SELECT i.quantity_on_hand INTO stock
