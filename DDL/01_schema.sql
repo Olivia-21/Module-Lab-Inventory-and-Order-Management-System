@@ -41,6 +41,8 @@ CREATE TABLE OrderItems (
     FOREIGN KEY (order_id) REFERENCES Orders(order_id),
     FOREIGN KEY (product_id) REFERENCES Products(product_id)
 );
+
+
 -- 5. Inventory Table
 CREATE TABLE Inventory (
     product_id INT PRIMARY KEY,

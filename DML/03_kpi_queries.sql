@@ -23,8 +23,8 @@ LIMIT 5;
 -- Monthly Sales Trend
 SELECT DATE_FORMAT(order_date, '%Y-%m') AS Month, SUM(total_order_amount) AS TotalRevenue
 FROM Orders
-GROUP BY Month
-ORDER BY Month;
+GROUP BY Month;
+
 
 
 -- Analytical Queries using Window Functions
