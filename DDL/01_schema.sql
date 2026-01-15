@@ -28,7 +28,10 @@ CREATE TABLE Orders (
     order_date DATE NOT NULL,
     total_order_amount DECIMAL(10,2) NOT NULL CHECK (total_order_amount >= 0),
     order_status VARCHAR(20) NOT NULL,
-    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
+    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id),
+    INDEX idx_orders_status (order_status),
+    INDEX idx_orders_status_date (order_status, order_date)
+    
 );
 
 -- 4. OrderItems Table
@@ -39,7 +42,9 @@ CREATE TABLE OrderItems (
     quantity INT NOT NULL CHECK (quantity > 0),
     price_at_purchase DECIMAL(10,2) NOT NULL CHECK (price_at_purchase >= 0),
     FOREIGN KEY (order_id) REFERENCES Orders(order_id),
-    FOREIGN KEY (product_id) REFERENCES Products(product_id)
+    FOREIGN KEY (product_id) REFERENCES Products(product_id),
+    INDEX idx_orderitems_order_id (order_id),
+    INDEX idx_orderitems_product_id (product_id)     
 );
 
 
