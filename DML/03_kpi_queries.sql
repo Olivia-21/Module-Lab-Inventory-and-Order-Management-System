@@ -1,8 +1,8 @@
 -- Business KPI Queries
 -- Total Revenue (Shipped or Delivered)
 SELECT SUM(total_order_amount) AS total_revenue
-FROM Orders
-WHERE order_status IN ('Shipped', 'Delivered');
+FROM shipped_delivered_orders;
+
 
 
 -- Top 10 Customers by Spending using the view
