@@ -4,13 +4,13 @@ SELECT SUM(total_order_amount) AS total_revenue
 FROM Orders
 WHERE order_status IN ('Shipped', 'Delivered');
 
--- Top 10 Customers by Spending
-SELECT c.full_name, SUM(o.total_order_amount) AS total_spent
-FROM Customers c
-JOIN Orders o ON c.customer_id = o.customer_id
-GROUP BY c.customer_id, c.full_name
+
+-- Top 10 Customers by Spending using the view
+SELECT full_name, total_spent
+FROM CustomerSalesSummary
 ORDER BY total_spent DESC
 LIMIT 10;
+
 
 -- Top 5 Best-Selling Products by Quantity
 SELECT p.product_name, SUM(oi.quantity) AS total_sold

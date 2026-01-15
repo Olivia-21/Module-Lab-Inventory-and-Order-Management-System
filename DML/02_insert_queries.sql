@@ -40,6 +40,7 @@ INSERT INTO Orders (customer_id, order_date, total_order_amount, order_status) V
 (7, '2024-04-01', 45.00, 'Delivered'),
 (8, '2024-04-18', 85.00, 'Delivered'),
 (9, '2024-05-03', 150.00, 'Pending'),
+(9, '2024-07-03', 150.00, 'Pending'),
 (10,'2024-05-20', 25.00, 'Delivered');
 
 

@@ -7,3 +7,6 @@ SELECT
 FROM Customers c
 JOIN Orders o ON c.customer_id = o.customer_id
 GROUP BY c.customer_id, c.full_name;
+
+-- show summary in Customer sales
+select * from customersalessummary;

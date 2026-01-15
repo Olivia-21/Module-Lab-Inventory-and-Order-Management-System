@@ -1,4 +1,4 @@
-#Update trigger on Inventory (Items in Stock)
+#Create Update trigger on Inventory (Items in Stock)
 DELIMITER $$
 CREATE TRIGGER trg_inventory_update
 AFTER UPDATE ON inventory

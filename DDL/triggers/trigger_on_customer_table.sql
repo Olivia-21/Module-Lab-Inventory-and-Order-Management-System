@@ -1,4 +1,4 @@
-#trigger Customer Delete
+#Create trigger when Customer info is deleted
 DELIMITER $$
 CREATE TRIGGER trg_customer_delete
 AFTER DELETE ON customers

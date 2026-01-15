@@ -1,4 +1,4 @@
-# Insert order trigger
+# create trigger when new order is inserted
 DELIMITER $$
 CREATE TRIGGER trg_insert_order
 AFTER INSERT ON orders
@@ -9,7 +9,7 @@ AFTER INSERT ON orders
 
 DELIMITER ;
 
-#Delete trigger on Orders
+# create trigger when new order is deleted
 DELIMITER $$
 CREATE TRIGGER trg_order_delete
 AFTER DELETE ON orders
@@ -19,7 +19,7 @@ AFTER DELETE ON orders
     END $$;
 DELIMITER ;
 
-#Update trigger on Orders
+#create trigger when new order is updated
 DELIMITER $$
 CREATE TRIGGER trg_order_update
 AFTER UPDATE ON orders
