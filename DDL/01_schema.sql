@@ -7,7 +7,7 @@ Use e_commercedb;
 CREATE TABLE Customers (
     customer_id INT PRIMARY KEY AUTO_INCREMENT,
     full_name VARCHAR(100) NOT NULL,
-    email VARCHAR(100),
+    email VARCHAR(100) UNIQUE,
     phone VARCHAR(20),
     shipping_address VARCHAR(200)
 );
