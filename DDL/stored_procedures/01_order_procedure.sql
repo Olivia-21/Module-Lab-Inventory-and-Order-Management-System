@@ -1,6 +1,5 @@
 -- STORED PROCEDURES FOR TRACKING ORDERS AND ORDER ITEMS
 
-# drop procedure ProcessNewOrder;
 DELIMITER $$
 CREATE PROCEDURE ProcessNewOrder(
     IN p_customer_id INT,
@@ -49,7 +48,7 @@ BEGIN
         SET pid = CAST(JSON_EXTRACT(p_product_ids, CONCAT('$[', i, ']')) AS UNSIGNED);
         SET qty = CAST(JSON_EXTRACT(p_quantities, CONCAT('$[', i, ']')) AS UNSIGNED);
 
-        -- Get price at purchase using JOIN (safer)
+        -- Get price at purchase using JOIN 
         SELECT p.price INTO price
         FROM Products p
         JOIN Inventory inv ON inv.product_id = p.product_id
